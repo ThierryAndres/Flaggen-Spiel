@@ -1,54 +1,60 @@
 body {
-    font-family: 'Lora', serif;
     margin: 0;
     padding: 0;
-    background: url('https://www.transparenttextures.com/patterns/wood-pattern.png') repeat, #f9e8d9;
-    color: #4a2c2a;
-    line-height: 1.8;
+    background: url('img.png') no-repeat center center/cover; /* Weltkarte als Hintergrund */
+    color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /* Navigation */
 .navbar {
-    background: linear-gradient(to bottom, #8b5a2b, #6b4e31);
-    padding: 20px;
+    background: rgba(44, 62, 80, 0.9);
+    padding: 15px;
     position: fixed;
     width: 100%;
     top: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(5px);
 }
 
 .burger {
-    font-size: 35px;
-    color: #d4af37;
+    font-size: 30px;
+    color: #e74c3c;
     cursor: pointer;
-    display: none;
     transition: transform 0.3s ease;
+    text-shadow: 0 0 5px #e74c3c, 0 0 10px rgba(231, 76, 60, 0.7); /* Verstärkter Effekt */
 }
 .burger:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nav-menu a {
-    color: #d4af37;
+    color: #ecf0f1;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-family: 'Cinzel', serif;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px #ecf0f1, 0 0 10px rgba(236, 240, 241, 0.7); /* Verstärkter Effekt */
 }
 .nav-menu a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px #d4af37;
+    color: #e74c3c;
+    text-shadow: 0 0 5px #e74c3c, 0 0 15px rgba(231, 76, 60, 0.8);
 }
 
 /* Mobile Ansicht */
@@ -59,98 +65,138 @@ body {
     .nav-menu {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
-        background: linear-gradient(to bottom, #8b5a2b, #6b4e31);
-        width: 250px;
-        padding: 20px;
-        border-radius: 0 0 15px 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        background: rgba(44, 62, 80, 0.9);
+        width: 200px;
+        padding: 15px;
+        border-radius: 0 0 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         flex-direction: column;
     }
     .nav-menu.active {
         display: flex;
     }
     .nav-menu a {
-        padding: 15px;
+        padding: 10px;
     }
 }
 
 /* Game Section */
 .section {
-    padding: 100px 20px;
+    padding: 60px 20px;
     margin: 20px;
-    margin-top: 80px;
-    background: rgba(255, 245, 230, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    animation: slideUp 1s ease;
+    margin-top: 80px; /* Platz für die Navbar */
     text-align: center;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
 }
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+
+/* Text-Effekte für alle Schriften */
+h1, p, .timer, .stats h2, .stats p, button, .option-btn {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 0, 0, 0.4); /* Mehrschichtiger Schatten */
+    /* -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5); */ /* Optional: Outline (nicht überall unterstützt) */
 }
 
 h1 {
-    color: #8b5a2b;
-    font-family: 'Cinzel', serif;
-    font-size: 42px;
+    color: #e74c3c;
+    font-size: 36px;
     margin-bottom: 20px;
+}
+
+.timer {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #f1c40f;
 }
 
 .flag-container {
     margin: 20px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Leichtes Overlay für das Flaggenbild */
+    border-radius: 10px;
+    display: inline-block;
 }
 .flag-img {
-    max-width: 300px;
-    border: 5px solid #d4af37;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    max-width: 250px;
+    border: 3px solid #e74c3c;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
     transition: transform 0.3s ease;
 }
 .flag-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .options {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin: 20px 0;
 }
 .option-btn {
-    background: #d4af37;
+    background: #3498db;
     border: none;
-    padding: 10px 20px;
-    color: #fff;
-    border-radius: 5px;
+    padding: 12px 25px;
+    color: #ecf0f1;
+    border-radius: 8px;
     cursor: pointer;
-    font-family: 'Lora', serif;
-    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .option-btn:hover {
-    background: #8b5a2b;
-    transform: scale(1.05);
+    background: #e74c3c;
+    transform: translateY(-2px);
 }
 .option-btn.correct {
-    background: #90ee90;
+    background: #2ecc71;
+    animation: pulse 0.5s;
 }
 .option-btn.wrong {
-    background: #ff6347;
+    background: #e74c3c;
+    animation: shake 0.5s;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
 }
 
 button {
-    background: #d4af37;
+    background: #e74c3c;
     border: none;
-    padding: 10px 20px;
-    color: #fff;
-    border-radius: 5px;
+    padding: 12px 25px;
+    color: #ecf0f1;
+    border-radius: 8px;
     cursor: pointer;
-    font-family: 'Cinzel', serif;
-    transition: background 0.3s ease;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
 }
 button:hover {
-    background: #8b5a2b;
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+.stats {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.stats h2 {
+    color: #f1c40f;
+}
+.stats p {
+    font-size: 18px;
+    margin: 10px 0;
 }

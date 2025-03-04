@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flaggen raten</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-$END$
+<div class="navbar">
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div class="nav-menu" id="navMenu">
+        <a href="index.html">Spielen</a>
+        <a href="#" onclick="restartGame()">Neustart</a>
+    </div>
+</div>
+
+<div class="section game">
+    <h1>Flaggen raten</h1>
+    <div class="timer">Zeit: <span id="time">60</span>s</div>
+    <div class="flag-container">
+        <img src="" alt="Flagge" id="flagImage" class="flag-img">
+    </div>
+    <p id="question">Welches Land gehört zu dieser Flagge?</p>
+    <div class="options" id="options"></div>
+    <p>Deine Punktzahl: <span id="score">0</span></p>
+    <div id="stats" class="stats" style="display: none;">
+        <h2>Spiel beendet!</h2>
+        <p>Richtige Antworten: <span id="correctCount">0</span></p>
+        <p>Falsche Antworten: <span id="wrongCount">0</span></p>
+        <button onclick="restartGame()">Nochmal spielen</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
