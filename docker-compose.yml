@@ -1,5 +1,5 @@
 services:
   flaggenspiel:
-    build: .
+    image: ghcr.io/thierryandres/flaggenspiel:1.0
     ports:
       - "8081:80"
